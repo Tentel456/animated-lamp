@@ -1,46 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Product Receiving Game</title>
-<style>
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-button.disabled {
-    background-color: #6c757d;
-    cursor: not-allowed;
-}
-</style>
+    <title>Token Game</title>
+    <style>
+        .grey-button {
+            background-color: grey;
+            color: white;
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Product Receiving Game</h1>
-    <p>Balance: <span id="balance">0</span></p>
-    <button id="receiveButton">Receive Products</button>
-
-    <script>
-let balance = 0;
-const receiveButton = document.getElementById('receiveButton');
-const balanceDisplay = document.getElementById('balance');
-
-function receiveProducts() {
-    balance += 100;
-    balanceDisplay.textContent = balance;
-    receiveButton.classList.add('disabled');
-    receiveButton.disabled = true;
-}
-
-receiveButton.addEventListener('click', () => {
-    if (!receiveButton.disabled) {
-        receiveProducts();
-        setInterval(receiveProducts, 6 * 60 * 60 * 1000); // Receive products every 6 hours
-    }
-});
-</script>
-<script src="server.js"></script>
+    <h1>Token Game</h1>
+    <p id="balance">Balance: 0</p>
+    <button id="tokenButton">Get Tokens</button>
+    <script src="script.js"></script>
 </body>
 </html>
